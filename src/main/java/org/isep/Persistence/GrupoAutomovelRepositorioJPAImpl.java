@@ -1,4 +1,4 @@
-package org.isep.Repositories;
+package org.isep.Persistence;
 
 import org.isep.Domain.GrupoAutomovel;
 

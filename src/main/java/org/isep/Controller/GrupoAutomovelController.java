@@ -2,8 +2,8 @@ package org.isep.Controller;
 
 
 import org.isep.Domain.GrupoAutomovel;
-import org.isep.Repositories.GrupoAutomovelRepositorio;
-import org.isep.Repositories.GrupoAutomovelRepositorioJPAImpl;
+import org.isep.Persistence.GrupoAutomovelRepositorio;
+import org.isep.Persistence.GrupoAutomovelRepositorioJPAImpl;
 
 import java.util.List;
 

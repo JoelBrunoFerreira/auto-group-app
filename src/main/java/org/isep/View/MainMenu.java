@@ -29,7 +29,7 @@ public class MainMenu {
 
     private static int menu() {
         int option = -1;
-        System.out.println("");
+        System.out.println();
         System.out.println("=============================");
         System.out.println(" Rent a Car ");
         System.out.println("=============================\n");
