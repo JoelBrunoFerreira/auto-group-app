@@ -8,8 +8,7 @@ import java.util.List;
 public class GrupoAutomovelRepositorioJPAImpl implements GrupoAutomovelRepositorio {
 
     private EntityManager getEntityManager() {
-        EntityManagerFactory factory = Persistence.
-                createEntityManagerFactory("rentacar");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("AutoGroupApp");
         EntityManager manager = factory.createEntityManager();
         return manager;
     }

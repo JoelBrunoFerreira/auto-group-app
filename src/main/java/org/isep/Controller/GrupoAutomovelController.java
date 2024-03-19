@@ -9,8 +9,7 @@ import java.util.List;
 
 public class GrupoAutomovelController {
 
-    public GrupoAutomovel registarGrupoAutomóvel(String nome, int portas,
-                                                 String classe) {
+    public GrupoAutomovel registarGrupoAutomovel(String nome, int portas, String classe) {
         GrupoAutomovel grupo1 = new GrupoAutomovel(nome, portas, classe);
         GrupoAutomovelRepositorio repo = new GrupoAutomovelRepositorioJPAImpl();
         return repo.add(grupo1);

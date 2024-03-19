@@ -3,8 +3,10 @@ package org.isep.Domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Carro")
 public class Carro {
     @Id
     private Long id;

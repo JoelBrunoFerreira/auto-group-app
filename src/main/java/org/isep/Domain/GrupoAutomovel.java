@@ -8,17 +8,32 @@ public class GrupoAutomovel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
-    String nome;
-    Integer Portas;
-    String Classe;
+    private int id;
+    private String nome;
+    private int portas;
+    private String classe;
 
+
+    // Constructors
+    // --------------------------------
     protected GrupoAutomovel() {
+        // Empty constructor
+    }
+    public GrupoAutomovel(String nome, int portas, String classe) {
+        this.nome = nome;
+        this.portas = portas;
+        this.classe = classe;
     }
 
-    public GrupoAutomovel(String nome, Integer portas, String classe) {
-        this.nome = nome;
-        Portas = portas;
-        Classe = classe;
+    // To String
+    // --------------------------------ś
+    @Override
+    public String toString() {
+        return "GrupoAutomovel{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", portas=" + portas +
+                ", classe='" + classe + '\'' +
+                '}';
     }
 }
