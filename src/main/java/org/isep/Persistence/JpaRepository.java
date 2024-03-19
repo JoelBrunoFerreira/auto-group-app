@@ -1,6 +1,5 @@
 package org.isep.Persistence;
 
-import javax.management.Query;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

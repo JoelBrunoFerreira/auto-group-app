@@ -3,7 +3,7 @@ package org.isep.Domain;
 import javax.persistence.*;
 
 @Entity
-//@Table(Name=GRUPOAUTOMOVEL)
+@Table(name = "GrupoAutomovel")
 public class GrupoAutomovel {
 
     @Id
