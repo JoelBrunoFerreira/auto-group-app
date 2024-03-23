@@ -17,12 +17,12 @@ jobs: # --> Workflow that will be executed whenever the events are triggered
     steps:
     - uses: actions/checkout@v3 # --> Action
 
-    - name: Set up JDK 17 # Name given to the action
+    - name: Set up JDK 21 # Name given to the action
       uses: actions/setup-java@v3 # --> Action
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
         cache: maven
-        
+
     - name: Build with Maven # --> Name given to the
       run: mvn -B package --file pom.xml # --> Command to be run
