@@ -15,10 +15,14 @@ jobs: # --> Workflow that will be executed whenever the events are triggered
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3 # --> Action
+    - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
+    - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+    - run: echo "The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+    - uses: actions/checkout@v4 # --> Action
 
     - name: Set up JDK 21 # Name given to the action
-      uses: actions/setup-java@v3 # --> Action
+      uses: actions/setup-java@v4 # --> Action
       with:
         java-version: '21'
         distribution: 'temurin'
