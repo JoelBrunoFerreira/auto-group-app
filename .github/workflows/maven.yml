@@ -78,11 +78,11 @@ jobs: # --> Workflow that will be executed whenever the events are triggered
           cache: 'maven'
 
       - name: Create JAR
-        run: | 
-         mvn clean package -DskipTests
-         mkdir staging && mv target/auto-group-app.jar target/auto-group-app-${{ env.build-number }}.jar && cp target/*.jar staging
+        run: mvn clean package -DskipTests
+
+      - name: Upload jar
+        run: mkdir staging && cp target/AutoGroupApp-*.jar staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
           path: staging
-          retention-days: 1
