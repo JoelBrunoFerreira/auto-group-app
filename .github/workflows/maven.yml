@@ -30,7 +30,7 @@ jobs: # --> Workflow that will be executed whenever the events are triggered
         cache: maven
 
     - name: Build with Maven # --> Name given to the
-      run: mvn -B package --file pom.xml # --> Command to be run
+      run: mvn compile --file pom.xml # --> Command to be run
 
 
 
@@ -39,6 +39,23 @@ jobs: # --> Workflow that will be executed whenever the events are triggered
     needs: [build] # --means that this job -test- will run only after the -build- job finished execution
 
     steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
 
