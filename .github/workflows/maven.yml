@@ -10,6 +10,9 @@ on: # --> Events that will trigger the gitHub actions
   pull_request: # --> Event 2
     branches: [ "master" ]
 
+env:
+  build-number: ${GITHUB_RUN_NUMBER}
+
 jobs: # --> Workflow that will be executed whenever the events are triggered
 
   build: # --> name of the first job
@@ -77,7 +80,7 @@ jobs: # --> Workflow that will be executed whenever the events are triggered
       - name: Create JAR
         run: | 
          mvn clean package -DskipTests
-         mkdir staging && mv target/yb-workload-sim.jar target/yb-workload-sim-${{ env.build-number }}.jar && cp target/*.jar staging
+         mkdir staging && mv target/auto-group-app.jar target/auto-group-app-${{ env.build-number }}.jar && cp target/*.jar staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
