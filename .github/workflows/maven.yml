@@ -33,7 +33,7 @@ jobs: # --> Workflow that will be executed whenever the events are triggered
         cache: maven
 
     - name: Build with Maven # --> Name given to the
-      run: mvn compile --file pom.xml # --> Command to be run
+      run: mvn -B compile --file pom.xml # --> Command to be run
 
 
 
